@@ -71,7 +71,7 @@ class GestureClassifier:
                 (x1, y1 - 10),
                 cv2.FONT_HERSHEY_SIMPLEX,
                 1.3,
-                (0, 0, 0),
+                (150, 150, 150),
                 3,
                 cv2.LINE_AA,
             )
