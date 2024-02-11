@@ -1,4 +1,6 @@
-# Handscape - An ASL interpreter
+# ASL interpreter
+
+https://github.com/elle-Bee/ASL-interpreter/assets/65856801/840d116a-2f71-42e0-ae65-bc3f8670f465
 
 ## Requirements
 - Python 3.x
@@ -49,7 +51,7 @@
 ```shell
    python app.py
 ```
-4. Go to the development server at: `http://127.0.0.1:5000`
+4. Go to the development server at: `http://localhost:5000`
 
 ## Project Structure
 
@@ -59,7 +61,7 @@
 
 ## Navigating through the project
 
-### `collect_imgs.py`
+### `scripts/01_collect_imgs.py`
 
 This script allows you to collect real-time image data from your webcam with specified labels. It creates a dataset for each label by capturing images and storing them in separate directories within a specified data directory.<br>
 
@@ -82,7 +84,7 @@ This script allows you to collect real-time image data from your webcam with spe
 - Press `Q` to start capturing images after each label prompt.
 ---
 
-### `create_dataset.py`
+### `scripts/02_create_dataset.py`
 
 This script captures images from a specified directory, detects hand landmarks using the MediaPipe library, and saves the landmark data along with corresponding labels into a pickle file.
 
@@ -104,7 +106,7 @@ This script captures images from a specified directory, detects hand landmarks u
 - The pickle file `data.pickle` contains a dictionary with keys 'data' and 'labels', where 'data' is a list of hand landmark data and 'labels' is a list of corresponding labels.
 ---
 
-### `inference_classifier.py`
+### `scripts/03_train_classifier.py`
 
 This script trains a Random Forest classifier for gesture recognition using hand landmarks data. It also evaluates the model's performance using cross-validation and saves the trained model for future use.
 
@@ -123,7 +125,7 @@ This script trains a Random Forest classifier for gesture recognition using hand
 - Adjust the model parameters and preprocessing steps as needed for improved performance.
 ---
 
-### `inference_classifier.py`
+### `scripts/04_inference_classifier.py`
 
 This script performs real-time gesture recognition using hand landmarks detected by the MediaPipe library. It loads a pre-trained gesture classification model and overlays the predicted gesture label on the input video stream.
 
